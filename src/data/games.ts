@@ -17,7 +17,7 @@ export type Game = {
   rating: number;
   reseñas: number;
   imagen: string;
-  requisitos: string;
+  requisitos?: string;
   trailer?: string;
   destacado?: boolean;
 };
