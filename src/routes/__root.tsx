@@ -72,20 +72,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Steam Verde — Plataforma de Distribución Digital de Videojuegos" },
+      { name: "description", content: "Steam Verde: explora, compra y administra tu biblioteca de videojuegos digitales." },
+      { property: "og:title", content: "Steam Verde" },
+      { property: "og:description", content: "Marketplace digital de videojuegos con biblioteca, reseñas y comunidad." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -110,10 +107,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen bg-background">
+        <Header />
+        <Outlet />
+        <footer className="mt-16 border-t border-border/60 py-8 text-center text-xs text-muted-foreground">
+          © 2026 Steam Verde · Proyecto académico de Administración de Bases de Datos
+        </footer>
+      </div>
     </QueryClientProvider>
   );
 }
