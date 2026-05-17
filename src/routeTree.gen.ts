@@ -9,38 +9,235 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as RegistroRouteImport } from './routes/registro'
+import { Route as PerfilRouteImport } from './routes/perfil'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as CatalogoRouteImport } from './routes/catalogo'
+import { Route as CarritoRouteImport } from './routes/carrito'
+import { Route as BibliotecaRouteImport } from './routes/biblioteca'
+import { Route as AmigosRouteImport } from './routes/amigos'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JuegoIdRouteImport } from './routes/juego.$id'
 
+const WishlistRoute = WishlistRouteImport.update({
+  id: '/wishlist',
+  path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegistroRoute = RegistroRouteImport.update({
+  id: '/registro',
+  path: '/registro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PerfilRoute = PerfilRouteImport.update({
+  id: '/perfil',
+  path: '/perfil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogoRoute = CatalogoRouteImport.update({
+  id: '/catalogo',
+  path: '/catalogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarritoRoute = CarritoRouteImport.update({
+  id: '/carrito',
+  path: '/carrito',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BibliotecaRoute = BibliotecaRouteImport.update({
+  id: '/biblioteca',
+  path: '/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AmigosRoute = AmigosRouteImport.update({
+  id: '/amigos',
+  path: '/amigos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JuegoIdRoute = JuegoIdRouteImport.update({
+  id: '/juego/$id',
+  path: '/juego/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/amigos': typeof AmigosRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/carrito': typeof CarritoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/login': typeof LoginRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/wishlist': typeof WishlistRoute
+  '/juego/$id': typeof JuegoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/amigos': typeof AmigosRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/carrito': typeof CarritoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/login': typeof LoginRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/wishlist': typeof WishlistRoute
+  '/juego/$id': typeof JuegoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/amigos': typeof AmigosRoute
+  '/biblioteca': typeof BibliotecaRoute
+  '/carrito': typeof CarritoRoute
+  '/catalogo': typeof CatalogoRoute
+  '/login': typeof LoginRoute
+  '/perfil': typeof PerfilRoute
+  '/registro': typeof RegistroRoute
+  '/wishlist': typeof WishlistRoute
+  '/juego/$id': typeof JuegoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/amigos'
+    | '/biblioteca'
+    | '/carrito'
+    | '/catalogo'
+    | '/login'
+    | '/perfil'
+    | '/registro'
+    | '/wishlist'
+    | '/juego/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/amigos'
+    | '/biblioteca'
+    | '/carrito'
+    | '/catalogo'
+    | '/login'
+    | '/perfil'
+    | '/registro'
+    | '/wishlist'
+    | '/juego/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/amigos'
+    | '/biblioteca'
+    | '/carrito'
+    | '/catalogo'
+    | '/login'
+    | '/perfil'
+    | '/registro'
+    | '/wishlist'
+    | '/juego/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  AmigosRoute: typeof AmigosRoute
+  BibliotecaRoute: typeof BibliotecaRoute
+  CarritoRoute: typeof CarritoRoute
+  CatalogoRoute: typeof CatalogoRoute
+  LoginRoute: typeof LoginRoute
+  PerfilRoute: typeof PerfilRoute
+  RegistroRoute: typeof RegistroRoute
+  WishlistRoute: typeof WishlistRoute
+  JuegoIdRoute: typeof JuegoIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wishlist': {
+      id: '/wishlist'
+      path: '/wishlist'
+      fullPath: '/wishlist'
+      preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/registro': {
+      id: '/registro'
+      path: '/registro'
+      fullPath: '/registro'
+      preLoaderRoute: typeof RegistroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/perfil': {
+      id: '/perfil'
+      path: '/perfil'
+      fullPath: '/perfil'
+      preLoaderRoute: typeof PerfilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catalogo': {
+      id: '/catalogo'
+      path: '/catalogo'
+      fullPath: '/catalogo'
+      preLoaderRoute: typeof CatalogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carrito': {
+      id: '/carrito'
+      path: '/carrito'
+      fullPath: '/carrito'
+      preLoaderRoute: typeof CarritoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblioteca': {
+      id: '/biblioteca'
+      path: '/biblioteca'
+      fullPath: '/biblioteca'
+      preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/amigos': {
+      id: '/amigos'
+      path: '/amigos'
+      fullPath: '/amigos'
+      preLoaderRoute: typeof AmigosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +245,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/juego/$id': {
+      id: '/juego/$id'
+      path: '/juego/$id'
+      fullPath: '/juego/$id'
+      preLoaderRoute: typeof JuegoIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  AmigosRoute: AmigosRoute,
+  BibliotecaRoute: BibliotecaRoute,
+  CarritoRoute: CarritoRoute,
+  CatalogoRoute: CatalogoRoute,
+  LoginRoute: LoginRoute,
+  PerfilRoute: PerfilRoute,
+  RegistroRoute: RegistroRoute,
+  WishlistRoute: WishlistRoute,
+  JuegoIdRoute: JuegoIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
